@@ -1,0 +1,23 @@
+{
+  "name": "cherrio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstewart8053/cherrio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jstewart8053/cherrio/issues"
+  },
+  "homepage": "https://github.com/jstewart8053/cherrio#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
