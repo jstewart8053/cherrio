@@ -1,34 +1,42 @@
-const express = require('express');
-const request = require('request');
-const cheerio = require('cheerio');
+import express from 'express';
+import fetch from 'node-fetch';
+import request from 'request';
+// import required
+import cheerio from 'cheerio';
+import fs from 'fs';
 
-const fs = require('fs');
+
 const app = express()
 
-let title, release, rating
+// let title, release, rating
 
-app.get('/scrape', (req, res) => {
+// app.get('/scrape', (req, res) => {
   
 
 // scrapping code
-url = "https://www.imdb.com/title/tt0145487/"
+let url = "https://www.imdb.com/title/tt0145487/"
 
-request(url, function (err, response, html) {
+// request(url, function (err, response, html) {
 
-    if (err) return console.error(err);
-    let $ = cheerio.load(html)
+//     if (err) return console.error(err);
+//     let $ = cheerio.load(html)
    
  
-   title = $("TitleHeader__TitleText-sc-1wu6n3d-0 dxSWFG").text()
+//    title = $("TitleHeader__TitleText-sc-1wu6n3d-0 dxSWFG").text()
        
         
-        console.log(title);
+//         console.log(title);
 
-    })
-})
+//     })
+// })
 
-
+const main = async () => {
+    const response = await fetch(url)
+    const body = await response.text()
+    console.log(body)
+}
 
 app.listen(5000, function() {
-    console.log("Server is listening on Port 5000")
+ console.log("Server running on port 5000")
 })
+
